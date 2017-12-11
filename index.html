@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Food Finder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<link rel="icon" href="icon.png">
+		<!-- Get jQuery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<!-- Get Popper.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<!-- Get Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		
+		<!-- Get Google Maps API & Places Library -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2lbvHriKM5pFiQTBYAiSGeuKAJPe2IFU&libraries=places&callback=initAutocomplete" async defer></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline|Bungee+Shade" rel="stylesheet">
+		<link href="css/appStyles.css" type="text/css" rel="stylesheet">
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+
+<body>
+	
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+  <ol class="carousel-indicators" style="display: none">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+	 <!-- View for Slide 1 ---------------------------------------------------------------------------------->
+    <div class="carousel-item active text-center" id="slide1">
+		<div style="padding: 10px; padding-top: 100px; font-size: 2em;">Food Finder</div>
+		<hr size="5px">
+		<button id="beginButton" href="#carouselExampleIndicators" role="button" data-slide="next"> Grab Some Grub!</button>
+		<p id="helperTxt">Enable location services for best experiecnce</p>
+    </div>
+	  <!-- View for Slide 2 ---------------------------------------------------------------------------------->
+    <div class="carousel-item">
+    <div class="container-fluid" id="locationSlide">
+	<div  class="row">
+		<div class="col-md-6 text-center">
+			<button id="useMyLoca" onclick="myMap()" disabled class="resultsButton" style="margin-top: 50%" href="#carouselExampleIndicators" role="button" data-slide="next">Location serivices not allowed :(</button>
+		</div>
+		<div class="col-md-6" id="inteliSearch">
+			<div id="locationField">
+				<input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text">
+			</div>
+			<button class="resultsButton" href="#carouselExampleIndicators" role="button" data-slide="next" id="pickedAddress"> Use this Location </button>
+		</div>
+	</div>	
+	</div>	
+    </div>
+	   <!-- View for Slide 3 ---------------------------------------------------------------------------------->
+    <div class="carousel-item text-center" id="slide3">
+      	<h2>Just a few more questions...</h2>
+		<hr>
+		<div class="form-group row">
+			<label  class="col-6 col-form-label">How far would you like to travel?</label>
+  				<div class="col-3">
+					<input id="mileRad"class="form-control" type="number" value="5" min="1">
+  				</div>
+			<label class="col-3 col-form-label">miles.</label>
+		</div>
+		<hr>
+		<div class="container-fluid">
+			<h4>How much would you like to spend?</h4>
+			<input class="priceCheck" type="radio" name="price" checked value="1">$
+			<input class="priceCheck" type="radio" name="price" value="2">$$
+			<input class="priceCheck" type="radio" name="price" value="3">$$$
+			<input class="priceCheck" type="radio" name="price" value="4">$$$$
+		</div>
+		<hr>
+		<button class="text-center resultsButton" id="pickOne" href="#carouselExampleIndicators" role="button" data-slide="next" onclick="findPlaces(1)">Pick One</button>
+		<button class="text-center resultsButton" id="showAll" href="#carouselExampleIndicators" role="button" data-slide="next" onclick="findPlaces(0)">Show Me Several</button>
+    </div>
+	 <!-- View for Slide 4 ---------------------------------------------------------------------------------->
+	<div class="carousel-item" id="lastSlide">
+      	<h1 id="finalTitle" class="text-center" style="padding: 20px">Results</h1>
+		<div id="mapContainer" class="row" style="width:100%;height:400px;"></div>
+		<h2 id="title" class="text-center">No Results</h2>
+		<div class="container-fluid" id="dataResults"></div>
+		<button class="resultsButton" href="#carouselExampleIndicators" role="button" data-slide-to="1">Start Over</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

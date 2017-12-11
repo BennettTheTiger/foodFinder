@@ -1,0 +1,123 @@
+
+		#autocomplete{
+			position: relative;
+			width: 100%;
+			padding-left: 15px;
+		}
+#mapContainer{
+	margin-left: 0px;
+	margin-bottom: 10px;
+}
+		#locationSlide{
+			background-color: #333745;
+			height: 100vh;
+			color:#FE5F55;
+		}
+		.carousel-item{
+			height: 100vh;
+			background-color: #333745;
+		}
+		#lastSlide{
+			height: 100%;
+			color: #FE5F55;
+			font-family: 'Bungee Shade', cursive;
+		}
+		.contentEven{
+			margin-top: 20px;
+			color: #EEF5DB;
+			background-color: #FE5F55;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.contentOdd{
+			margin-top: 20px;
+			color: #333745;
+			background-color: #EEF5DB;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		#dataResults{
+			font-family: 'Bungee', cursive; 
+		}
+		
+		#slide1{
+			font-family: 'Bungee Shade', cursive;
+			background-color: #FE5F55;
+			color: #EEF5DB;
+			position: relative;
+			font-size: 2em;
+			margin: auto;
+		}
+		#beginButton{
+			border-style: solid;
+			border-width: 5px;
+    		border-color: #333745;
+			background-color: #FE5F55;
+			border-radius: 20px;
+			padding: 10px;
+			margin: auto;
+			color: #EEF5DB;
+			margin: 10px;
+			
+			transition-duration: .4s;
+  			transition-timing-function: ease-in-out;
+			
+		}
+		
+		#beginButton:hover{
+			
+			background-color:#333745;
+			color:  #FE5F55;
+		}
+		hr{
+			 background-color: #333745;
+    		border: 0 none;
+    		height: 3px;
+			width: 50%;
+		}
+		#helperTxt{
+			font-family: 'Bungee', cursive; 
+			font-size: .5em; 
+			bottom:50px; 
+			position: fixed; 
+			margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+			left: 0;
+			right: 0;
+		}
+		#slide3{
+			background-color: #EEF5DB;
+			font-family: 'Bungee', cursive;
+			color:#333745;
+		}
+		.resultsButton{
+			border-style: solid;
+			border-width: 5px;
+    		border-color: #333745;
+			background-color: #FE5F55;
+			border-radius: 20px;
+			padding: 10px;
+			margin: auto;
+			color: #EEF5DB;
+			margin: 10px;
+			font-family: 'Bungee', cursive;
+			transition-duration: .4s;
+  			transition-timing-function: ease-in-out;
+			
+		}
+		
+		.resultsButton:hover{
+			
+			background-color:#333745;
+			color:  #FE5F55;
+		}
+		input{
+			border-radius: 20px;
+		}
+		.priceCheck{
+			margin: 5px;
+			margin-left: 50px;
+		}
+		#inteliSearch{
+			margin-top: 20%;
+			text-align: center;
+		}
